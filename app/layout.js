@@ -1,8 +1,8 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Roboto_Flex, Roboto_Slab } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
-// const robotoSlab = Roboto_Slab({ subsets: ['latin'], weight:["100","300","400",'500','700','900'] })
+const robotoFlex = Roboto_Flex({ subsets: ['latin'], display: 'swap', variable: '--font-roboto-flex', weight: ['100','200','300','400','500','600','700','800','900'] })
+const robotoSlab = Roboto_Slab({ subsets: ['latin'], display: 'swap', variable: '--font-roboto-slab', weight: ['100','200','300','400','500','600','700','800','900'] })
 
 export const metadata = {
   title: 'Gallery',
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${robotoFlex.variable} ${robotoSlab.variable}`}>{children}</body>
     </html>
   )
 }
