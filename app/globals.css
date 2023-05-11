@@ -2,16 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    h1,h2,h3,h4,h5,h6{
-        @apply font-serif font-semibold text-gray-900 dark:text-darkText text-4xl;
+@layer base {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-serif font-semibold text-4xl text-slate-100;
     }
-    p{
-        @apply text-2xl opacity-90;
+
+    p,a {
+        @apply font-sans text-2xl text-slate-100 font-extralight;
     }
 }
-@layer components{
-    .custom-gradient{
+
+@layer components {
+    .custom-text-gradient {
         background: linear-gradient(135deg, hsla(228, 86%, 72%, 1) 0%, hsla(248, 57%, 68%, 1) 45%, hsla(269, 41%, 60%, 1) 77%, hsla(322, 37%, 42%, 1) 100%);
+        /* background-size: 2000px; */
+        /* background-position: right; */
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
     }
 }
