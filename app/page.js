@@ -87,7 +87,7 @@ export default async function Home() {
               })
             }
           </div>
-          <div className="flex flex-wrap place-content-start gap-4">
+          <div className="lg:flex lg:flex-wrap place-content-start lg:col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {
               photosCol3.map(photo => {
                 return (
