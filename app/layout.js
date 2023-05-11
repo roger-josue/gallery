@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${robotoFlex.variable} ${robotoSlab.variable}`}>{children}</body>
+      <body className={`${robotoFlex.variable} ${robotoSlab.variable} bg-bgLight`}>{children}</body>
     </html>
   )
 }

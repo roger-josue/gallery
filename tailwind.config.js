@@ -8,14 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bgDark: '#444655',
-        bgLight: '#F7F8FF',
+        bgDark: '#202020',
+        bgLight: '#ECEEFF',
         primary: '#7991F5',
         secondary: '#596193',
         accent: '#8C7FDC',
         extra: '#F26C79',
         darkText: '#ECEEFF',
-        lightText: '#A9AABC'
+        lightText: '#A2A2B2'
       },
       fontFamily: {
         sans: ['var(--font-roboto-flex)'],
