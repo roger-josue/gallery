@@ -35,18 +35,20 @@ export default async function Home() {
       <div className='w-screen min-h-screen'>
         {/* Hero where the search bar will go */}
         <div className="relative w-full h-[70vh]">
-          <Image priority src={`${hero.urls.full}&fm=jpg&fit=max`} alt="background hero" fill={true} className="object-cover" />
+          <div className="w-full h-full bg-gray-300">
+            <Image priority src={`${hero.urls.full}&fm=jpg&fit=max`} alt="background hero" fill={true} className="object-cover" />
+          </div>
           <a
-            className="absolute z-20 text-lg bottom-2 left-2 opacity-95"
+            className="absolute z-20 text-lg bottom-2 left-2 opacity-95 focus:text-primary hover:text-primary"
             target="_blank"
             href={`https://unsplash.com/@${hero.user.username}`}
           >
             Photo by {hero.user.username}
           </a>
-          <div className="absolute inset-0 bg-bgDark bg-opacity-40 z-10 flex flex-col place-content-center place-items-center gap-4 p-4 md:p-0">
+          <div className="absolute inset-0 bg-bgDark bg-opacity-50 z-10 flex flex-col place-content-center place-items-center gap-4 p-4 md:p-0">
             <h1 className="text-left w-full md:w-[700px]">All the high-resolution images that you want to see</h1>
             <p className="text-left w-full md:w-[700px]">Find and share with your friends the best high-quality photos</p>
-            <input className="p-4 rounded-md w-full md:w-[700px]" type="text" name="search" id="search" placeholder="Search high-resolution pics" />
+            <input className="p-4 text-xl rounded-md w-full md:w-[700px] outline-none opacity-80 transition-all duration-500 focus:ring ring-offset-2 ring-primary focus:opacity-100" type="text" name="search" id="search" placeholder="Search high-resolution pics" />
           </div>
         </div>
         {/* grid where the infinite scroll will go */}
@@ -58,7 +60,7 @@ export default async function Home() {
                   <div className="relative bg-gray-300 h-max">
                     <Image width={600} height={800} src={`${photo.urls.regular}&fm=jpg&w=600&fit=max`} alt={photo.user.username} className="opacity-90 " />
                     <a
-                      className="absolute text-lg bottom-0 left-2"
+                      className="absolute text-lg bottom-0 left-2 transition-all duration-500 focus:text-primary hover:text-primary"
                       target="_blank"
                       href={`https://unsplash.com/@${photo.user.username}`}
                     >
@@ -76,7 +78,7 @@ export default async function Home() {
                   <div className="relative bg-gray-300 h-max">
                     <Image width={600} height={800} src={`${photo.urls.regular}&fm=jpg&w=600&fit=max`} alt={photo.user.username} className="opacity-90 " />
                     <a
-                      className="absolute text-lg bottom-0 left-2"
+                      className="absolute text-lg bottom-0 left-2 transition-all duration-500 focus:text-primary hover:text-primary"
                       target="_blank"
                       href={`https://unsplash.com/@${photo.user.username}`}
                     >
@@ -94,7 +96,7 @@ export default async function Home() {
                   <div className="relative bg-gray-300 h-max">
                     <Image width={600} height={800} src={`${photo.urls.regular}&fm=jpg&w=600&fit=max`} alt={photo.user.username} className="opacity-90 " />
                     <a
-                      className="absolute text-lg bottom-0 left-2"
+                      className="absolute text-lg bottom-0 left-2 transition-all duration-500 focus:text-primary hover:text-primary"
                       target="_blank"
                       href={`https://unsplash.com/@${photo.user.username}`}
                     >

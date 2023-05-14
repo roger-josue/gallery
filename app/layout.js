@@ -1,3 +1,4 @@
+import Footer from '@/components/footer'
 import './globals.css'
 import { Roboto_Flex, Roboto_Slab } from 'next/font/google'
 
@@ -12,7 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${robotoFlex.variable} ${robotoSlab.variable} bg-bgLight`}>{children}</body>
+      <body className={`${robotoFlex.variable} ${robotoSlab.variable} bg-bgLight`}>
+        {children}
+        <Footer />
+        </body>
     </html>
   )
 }
