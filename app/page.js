@@ -1,27 +1,6 @@
-import { createApi } from "unsplash-js";
 import Image from "next/image";
 import ImageGrid from "@/components/imageGrid";
-// import hero from '../public/images/hero-bg.jpg';
-
-const unsplash = createApi({
-  accessKey: process.env.UNSPLASH_API_KEY
-});
-
-async function getHeroPhoto() {
-  try {
-    return await unsplash.photos.get({ photoId: "eOpewngf68w" });
-  } catch (error) {
-    console.log('Something went wrong, Photo could not be fetched!');
-  }
-}
-
-async function getList(page = 1) {
-  try {
-    return await unsplash.photos.list({ page, perPage: 6 });
-  } catch (error) {
-    console.log('Something went wrong, Photos could not be fetched!');
-  }
-}
+import { getHeroPhoto, getList } from "@/unsplash/unsplashAPI";
 
 export default async function Home() {
 
