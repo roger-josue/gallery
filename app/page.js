@@ -17,7 +17,7 @@ async function getHeroPhoto() {
 
 async function getList(page = 1) {
   try {
-    return await unsplash.photos.list({ page, perPage: 9 });
+    return await unsplash.photos.list({ page, perPage: 6 });
   } catch (error) {
     console.log('Something went wrong, Photos could not be fetched!');
   }
@@ -33,9 +33,8 @@ export default async function Home() {
   return (
     <main className='w-screen min-h-screen text-gray-500'>
       <div className='w-screen min-h-screen'>
-        {/* Hero where the search bar will go */}
         <div className="relative w-full h-[70vh]">
-          <div className="w-full h-full bg-gray-300">
+          <div className="absolute w-full h-full bg-gray-300">
             <Image priority src={`${hero.urls.full}&fm=jpg&fit=max`} alt="background hero" fill={true} className="object-cover" />
           </div>
           <a
