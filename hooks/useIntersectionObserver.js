@@ -10,7 +10,8 @@ export function useIntersectionObserver(ref) {
       const entry = entries[0];
       setIsIntersecting(entry.isIntersecting);
     }, {
-        threshold: 0.7
+      rootMargin:'40%',
+        threshold: 0.4
       });
     observer.observe(div);
     return () => {

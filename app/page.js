@@ -1,13 +1,21 @@
 import Image from "next/image";
 import ImageGrid from "@/components/imageGrid";
-import { getHeroPhoto, getList } from "@/unsplash/unsplashAPI";
+import { getHeroPhoto } from "@/unsplash/unsplashAPI";
+
+// async function getPhotos(page = 1) {
+//   const res = await fetch(`${process.env.API_BASE_URL}?page=${page}`);
+
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data');
+//   }
+//   return res.json();
+// }
 
 export default async function Home() {
 
+  //fetching directly from the UnsplashApi
   const heroData = await getHeroPhoto();
-  const photosData = await getList();
   const hero = await heroData.response;
-  const photos = await photosData.response.results;
 
   return (
     <main className='w-screen min-h-screen text-gray-500'>
@@ -29,7 +37,7 @@ export default async function Home() {
             <input className="p-4 text-xl rounded-md w-full md:w-[700px] outline-none opacity-80 transition-all duration-500 focus:ring ring-offset-2 ring-primary focus:opacity-100" type="text" name="search" id="search" placeholder="Search high-resolution pics" />
           </div>
         </div>
-        <ImageGrid photos={photos}  />
+        <ImageGrid />
       </div>
     </main>
   )
