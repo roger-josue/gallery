@@ -8,3 +8,12 @@ export async function getPhotos(page = 1) {
     }
     return res.json();
 }
+
+export async function searchPhotos(query,page = 1) {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/search?search=${query}&page=${page}`,{cache: 'no-store'});
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch data');
+    }
+    return res.json();
+}

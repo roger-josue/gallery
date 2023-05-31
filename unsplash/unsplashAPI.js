@@ -19,3 +19,11 @@ const unsplash = createApi({
       console.log('Something went wrong, Photos could not be fetched!');
     }
   }
+  
+  export async function search(query,page = 1) {
+    try {
+      return await unsplash.search.getPhotos({query: query, page: page});
+    } catch (error) {
+      console.log('Something went wrong, Photos could not be fetched!');
+    }
+  }

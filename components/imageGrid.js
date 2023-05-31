@@ -24,17 +24,17 @@ export default function ImageGrid() {
         }
     }, [isIntersecting]);
 
-    useEffect(() => {
-        /*
-        Fetching from the Route handler because I cannot create dynamic requests from the browser 
-        without hiding the Unsplash API calls behind the server
-        */
-        getPhotos().then(data => {
-            setPhotos(data.response.results);
-        }).catch(err => {
-            console.log(err)
-        })
-    },[]);
+    // useEffect(() => {
+    //     /*
+    //     Fetching from the Route handler because I cannot create dynamic requests from the browser 
+    //     without hiding the Unsplash API calls behind the server
+    //     */
+    //     getPhotos().then(data => {
+    //         setPhotos(data.response.results);
+    //     }).catch(err => {
+    //         console.log(err)
+    //     })
+    // },[]);
 
 
     return (
