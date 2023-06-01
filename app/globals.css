@@ -28,4 +28,8 @@
         -webkit-text-fill-color: transparent;
         
     }
+
+    .custom-btn{
+        @apply bg-primary text-darkText p-2 rounded-md; 
+    }
 }

@@ -1,28 +1,31 @@
 'use client'
-import { getPhotos } from "@/app/utils/apiHandlers";
+
+import { searchPhotos } from "@/app/utils/apiHandlers";
+// import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Image from "next/image";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-export default function ImageGrid() {
+export default function SearchGrid() {
 
-    const [nextPage, setNextPage] = useState(1);
+    const searchParams = useSearchParams();
     const [photos, setPhotos] = useState([]);
-    const threshold = useRef(null)
-    const isIntersecting = useIntersectionObserver(threshold);
+    // const [nextPage, setNextPage] = useState(1);
+    // const threshold = useRef(null)
+    // const isIntersecting = useIntersectionObserver(threshold);
 
+    // TODO: Implement infinite scroll pagination for the search results
     useEffect(() => {
-        if (isIntersecting) {
-            getPhotos(nextPage).then(data => {
-                setPhotos([...photos, ...data.response.results]);
-                // console.log(data.response.results);
-                setNextPage(nextPage + 1);
-                // console.log(nextPage)
-            }).catch(err => {
-                console.log(err)
+        const search = searchParams.get('search');
+        // if (isIntersecting) {
+            searchPhotos(search).then(value => {
+                setPhotos([...value.response.results]);
+                // setNextPage(nextPage + 1);
+            }).catch(e => {
+                console.log(e);
             })
-        }
-    }, [isIntersecting]);
+        // }
+    }, [searchParams])
 
 
     return (
@@ -43,7 +46,7 @@ export default function ImageGrid() {
                     )
                 })
             }
-            <div ref={threshold}></div>
+            {/* <div ref={threshold}></div> */}
         </div>
     );
 }
