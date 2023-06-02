@@ -14,7 +14,7 @@ const unsplash = createApi({
   
   export async function getList(page = 1) {
     try {
-      return await unsplash.photos.list({ page, perPage: 6 });
+      return await unsplash.photos.list({ page, perPage: 9 });
     } catch (error) {
       console.log('Something went wrong, Photos could not be fetched!');
     }

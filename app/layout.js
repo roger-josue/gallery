@@ -21,7 +21,7 @@ export default async function RootLayout({ children }) {
   const hero = await heroData.response;
 
   return (
-    <html lang="en">
+    <html lang="en" style={{scrollBehavior: "smooth"}}>
       <body className={`${robotoFlex.variable} ${robotoSlab.variable} bg-bgLight`}>
         <div className='w-screen min-h-screen text-gray-500'>
           <div className="relative w-full h-[70vh]">
