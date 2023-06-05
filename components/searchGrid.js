@@ -18,7 +18,7 @@ export default function SearchGrid() {
     const threshold = useRef(null)
     const isIntersecting = useIntersectionObserver(threshold);
 
-    
+
     useEffect(() => {
         const search = searchParams.get('search');
         if (previousParam !== search) {
@@ -43,10 +43,14 @@ export default function SearchGrid() {
 
     return (
         <div className='max-w-screen-2xl min-h-[600px] py-10 mx-auto sm:px-4 columns-auto md:grid md:gap-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
-            <div className="md:col-span-2 lg:col-span-3 2xl:col-span-4 ml-4 mb-4 mx-auto w-fit flex gap-2 ">
-                <Link className=" text-primary visited:text-accent hover:underline" href={'/'}>&gt; Home</Link>
-                <button className="text-2xl text-primary visited:text-accent hover:underline" onClick={() => {router.back()}}>&gt; Previous</button>
-            </div>
+            <ul className="md:col-span-2 lg:col-span-3 2xl:col-span-4 ml-4 mb-4 mx-auto w-fit flex gap-2 h-8 items-center">
+                <li className="h-full">
+                    <Link className="text-primary visited:text-accent hover:underline" href={'/'}>&gt; Home</Link>
+                </li>
+                <li className="h-full">
+                    <button className="text-2xl text-primary visited:text-accent hover:underline" onClick={() => { router.back() }}>&gt; Previous</button>
+                </li>
+            </ul>
             {
                 (loading) ? (
                     <>

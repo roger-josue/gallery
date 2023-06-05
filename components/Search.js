@@ -10,8 +10,8 @@ export default function Search() {
     const [searchInput, setSearchInput] = useState('');
 
     useEffect(() => {
-        if(localStorage.getItem('search')){
-            setSearchInput(localStorage.getItem('search'));
+        if(sessionStorage.getItem('search')){
+            setSearchInput(sessionStorage.getItem('search'));
         }
     }, [])
     
@@ -27,7 +27,7 @@ export default function Search() {
     }
     
     function handleInput(input) {
-        localStorage.setItem('search',input.target.value);
+        sessionStorage.setItem('search',input.target.value);
         setSearchInput(input.target.value);
     }
 
