@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DownloadButton from "./DownloadButton";
 export default function Grid({ photos }) {
     return (
         <>
@@ -7,7 +8,7 @@ export default function Grid({ photos }) {
                     photos.map(photo => {
                         return (
                             <div key={photo.id} className="relative bg-gray-300 w-fit h-fit mb-4 mx-auto">
-                                <Image width={400} height={600} style={{width: 'auto',height: 'auto'}} src={`${photo.urls.regular}&fm=jpg&fit=max`} alt={photo.user.username} className="opacity-90 object-cover md:aspect-square" />
+                                <Image width={400} height={600} style={{ width: 'auto', height: 'auto' }} src={`${photo.urls.regular}&fm=jpg&fit=max`} alt={photo.user.username} className="opacity-90 object-cover md:aspect-square" />
                                 <a
                                     className="absolute text-lg bottom-0 left-2 transition-all duration-500 focus:text-primary hover:text-primary"
                                     target="_blank"
@@ -15,6 +16,7 @@ export default function Grid({ photos }) {
                                 >
                                     Photo by {photo.user.username}
                                 </a>
+                                <DownloadButton location={photo.links.download_location} filename={`${photo.user.name}.jpeg`} />
                             </div>
                         )
                     })

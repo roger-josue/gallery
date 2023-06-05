@@ -27,3 +27,11 @@ const unsplash = createApi({
       console.log('Something went wrong, Photos could not be fetched!');
     }
   }
+  
+  export async function download(location) {
+    try {
+      return await unsplash.photos.trackDownload({downloadLocation: location});
+    } catch (error) {
+      console.log('Something went wrong, Photo could not be downloaded!');
+    }
+  }
