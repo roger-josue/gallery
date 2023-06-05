@@ -16,7 +16,7 @@ export default function Grid({ photos }) {
                                 >
                                     Photo by {photo.user.username}
                                 </a>
-                                <DownloadButton location={photo.links.download_location} filename={`${photo.user.name}.jpeg`} />
+                                <DownloadButton location={photo.links.download_location} filename={`By ${photo.user.name}.jpeg`} />
                             </div>
                         )
                     })
