@@ -1,13 +1,20 @@
 'use client'
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Search() {
 
     const router = useRouter();
     const searchParams = useSearchParams();
     const [searchInput, setSearchInput] = useState('');
+
+    useEffect(() => {
+        if(localStorage.getItem('search')){
+            setSearchInput(localStorage.getItem('search'));
+        }
+    }, [])
+    
 
     function navigate() {
         if (searchInput.trim().length > 0) {
@@ -18,8 +25,9 @@ export default function Search() {
             router.push('/');
         }
     }
-
+    
     function handleInput(input) {
+        localStorage.setItem('search',input.target.value);
         setSearchInput(input.target.value);
     }
 
