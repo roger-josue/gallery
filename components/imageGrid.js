@@ -17,9 +17,7 @@ export default function ImageGrid() {
         if (isIntersecting || photos.length === 0) {
             getPhotos(nextPage).then(data => {
                 setPhotos([...photos, ...data.response.results]);
-                // console.log(data.response.results);
                 setNextPage(nextPage + 1);
-                // console.log(nextPage)
                 if( loading ){
                     setLoading(false);
                 }
@@ -31,14 +29,14 @@ export default function ImageGrid() {
 
 
     return (
-        <div className='max-w-screen-2xl min-h-[600px] py-10 mx-auto sm:px-4 columns-auto md:grid md:gap-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+        <div className='max-w-screen-2xl min-h-[600px] py-10 mx-auto sm:px-4 max-md:columns-auto md:grid md:gap-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
             {
                 (loading) ? (
                     <>
-                        <div className="bg-gray-300 w-[400px] h-[600px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
-                        <div className="bg-gray-300 w-[400px] h-[600px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
-                        <div className="bg-gray-300 w-[400px] h-[600px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
-                        <div className="bg-gray-300 w-[400px] h-[600px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                        <div className="bg-primary blur-[2px] bg-opacity-50 w-[400px] h-[400px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                        <div className="bg-primary blur-[2px] bg-opacity-50 w-[400px] h-[400px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                        <div className="bg-primary blur-[2px] bg-opacity-50 w-[400px] h-[400px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                        <div className="bg-primary blur-[2px] bg-opacity-50 w-[400px] h-[400px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
                     </>
 
                 ) : (

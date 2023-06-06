@@ -26,7 +26,7 @@ export default async function RootLayout({ children }) {
         <div className='w-screen min-h-screen text-gray-500'>
           <div className="relative w-full h-[70vh]">
             <div className="absolute w-full h-full bg-gray-300">
-              <Image priority src={`${hero.urls.full}&fm=jpg&fit=max`} alt="background hero" fill={true} className="object-cover" />
+              <Image priority src={`${hero.urls.full}&fm=jpg&fit=max`} alt="background hero" fill placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOsnPi1HgAGCgKA0hWgaQAAAABJRU5ErkJggg==" className="object-cover" />
             </div>
             <a
               className="absolute z-20 text-lg bottom-2 left-2 opacity-95 focus:text-primary hover:text-primary"
