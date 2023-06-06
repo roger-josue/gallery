@@ -54,10 +54,10 @@ export default function SearchGrid() {
             {
                 (loading) ? (
                     <>
-                        <div className="bg-gray-300 w-[400px] h-[600px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
-                        <div className="bg-gray-300 w-[400px] h-[600px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
-                        <div className="bg-gray-300 w-[400px] h-[600px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
-                        <div className="bg-gray-300 w-[400px] h-[600px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                        <div className="bg-primary blur-[2px] bg-opacity-50 w-[350px] h-[400px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                        <div className="bg-primary blur-[2px] bg-opacity-50 w-[350px] h-[400px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                        <div className="bg-primary blur-[2px] bg-opacity-50 w-[350px] h-[400px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                        <div className="bg-primary blur-[2px] bg-opacity-50 w-[350px] h-[400px] mb-4 mx-auto block animate-[pulse_0.8s_ease-in-out_infinite]"></div>
                     </>
 
                 ) : (

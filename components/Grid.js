@@ -1,6 +1,5 @@
-import { motion } from "framer-motion"
-import Image from "next/image";
-import DownloadButton from "./DownloadButton";
+import ImageWrapper from "./imageWrapper";
+
 export default function Grid({ photos }) {
     return (
         <>
@@ -8,17 +7,7 @@ export default function Grid({ photos }) {
                 (photos.length > 0) ? (
                     photos.map(photo => {
                         return (
-                            <motion.div transition={{duration: 1}} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} key={photo.id} className="relative bg-gray-300 w-fit h-fit mb-4 mx-auto">
-                                <Image width={400} height={600} src={`${photo.urls.regular}&fm=jpg&fit=max`} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOsnPi1HgAGCgKA0hWgaQAAAABJRU5ErkJggg==" alt={photo.user.username} className="opacity-90 object-cover md:aspect-square" />
-                                <a
-                                    className="absolute text-lg bottom-0 left-2 transition-all duration-500 focus:text-primary hover:text-primary"
-                                    target="_blank"
-                                    href={`https://unsplash.com/@${photo.user.username}`}
-                                >
-                                    Photo by {photo.user.username}
-                                </a>
-                                <DownloadButton location={photo.links.download_location} filename={`By ${photo.user.name}.jpeg`} />
-                            </motion.div>
+                            <ImageWrapper key={photo.id} photo={photo} />
                         )
                     })
                 ) : (
