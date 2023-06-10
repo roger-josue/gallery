@@ -11,8 +11,8 @@ export default function ImageWrapper({ photo }) {
 
     return (
         <>
-            <motion.div onClick={() => {setToggleModal(true)}} transition={{ duration: 1 }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="relative bg-gray-300 w-fit h-fit mb-4 mx-auto cursor-zoom-in">
-                <Image width={400} height={600} src={`${photo.urls.regular}&fm=jpg&fit=max`} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOsnPi1HgAGCgKA0hWgaQAAAABJRU5ErkJggg==" alt={photo.user.username} className="opacity-90 object-cover md:aspect-square" />
+            <motion.div  transition={{ duration: 1 }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="relative bg-gray-300 w-fit h-fit mb-4 mx-auto">
+                <Image onClick={() => {setToggleModal(true)}} width={400} height={600} src={`${photo.urls.regular}&fm=jpg&fit=max`} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOsnPi1HgAGCgKA0hWgaQAAAABJRU5ErkJggg==" alt={photo.user.username} className="opacity-90 object-cover md:aspect-square cursor-zoom-in" />
                 <a
                     className="absolute text-lg bottom-0 left-2 transition-all duration-500 focus:text-primary hover:text-primary"
                     target="_blank"
@@ -20,7 +20,6 @@ export default function ImageWrapper({ photo }) {
                 >
                     Photo by {photo.user.username}
                 </a>
-                <DownloadButton location={photo.links.download_location} filename={`By ${photo.user.name}.jpeg`} />
             </motion.div>
             {
                 (toggleModal) &&
